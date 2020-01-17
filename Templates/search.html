@@ -1,0 +1,48 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Java Script / Ajax Code to load JSON from server -->
+<script>
+$(document).ready(function(){
+
+$('#search').click(function(){
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+     if (this.readyState == 4 && this.status == 200) {
+     response = xmlhttp.responseText;
+
+     if (response.indexOf('{')==-1)
+     {
+         $('#demo').html("<b>"+ response +"<br/>");
+     }
+     else 
+      {
+        var record = JSON.parse(response);
+        $('#demo').html('<h2> Record Found ! </h2>');
+        for(key in record)
+        {
+            $('#demo').append(key + ' : ' + record[key] +'<br/>');
+        }
+      }
+  }
+};
+xmlhttp.open("GET", "search/?id="+$('#id').val(), true);
+xmlhttp.send();
+
+});
+});
+
+</script>
+</head>
+
+<body>
+<h2>Use the XMLHttpRequest to get the content of a file.</h2>
+ 
+Enter Id to Search :<input type='text' name='id' id='id'/> <input type='button' id='search' value='search'/>
+
+<div id='demo'>
+
+</div>
+
+</body>

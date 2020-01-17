@@ -1,0 +1,39 @@
+{
+    "person1": {
+        "id": "2002",
+        "name": "mukesh",
+        "age": "30",
+        "address": "indore",
+        "vehicals": ["bike", "scooty", "car"]
+    },
+    "person2": {
+        "id": "2003",
+        "name": "amit",
+        "age": "12",
+        "address": "Indore",
+        "vehicals": ["Cycle", "Scooter"]
+
+    },
+    "person3": {
+        "id": "2004",
+        "name": "raghav",
+        "age": "30",
+        "address": "bhopal",
+        "vehicals": ["bike", "scooty", "car"]
+    },
+    "person4": {
+        "id": "2005",
+        "name": "sonia",
+        "age": "20",
+        "address": "indore",
+        "vehicals": ["bike", "scooty", "car"]
+    },
+    "person5": {
+        "id": "2002",
+        "name": "mukesh",
+        "age": "30",
+        "address": "bhopal",
+        "vehicals": ["bike", "scooty", "car"]
+    }
+
+}

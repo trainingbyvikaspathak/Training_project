@@ -1,0 +1,30 @@
+ {% extends 'base.html' %}
+
+ {% block content %}
+ <div class="row">
+ <center>
+ <div class="col col-md-6">
+ Enter Mobile Number <input type="text" class="form-control" id="mobile" onfocus="s1.innerHTML='';"/><br/>
+ Enter Message 
+  <textarea id="msg" rows="10" cols="20" class="form-control"> </textArea> <br/> 
+ <input type="button" value="Send Message" id="btn1" class="btn btn-success"/> <br/><br/>
+ <span id="s1" style="color:blue"></span>
+ </div>
+ </center>
+ </div>
+
+<script>
+$(document).ready(function(){
+$("#btn1").click(function(){
+
+ xhtp = new XMLHttpRequest();
+ xhtp.open("POST","http://103.10.234.154/vendorsms/pushsms.aspx?user=gist123&password=I64H3JQA&msisdn="+ $("#mobile").val()  +"&sid=GISTEC&msg="+ $("#msg").val() + "&fl=0&gwid=2",true)
+ xhtp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+ xhtp.send();
+$("#s1").text("SMS SEND Given Mobile Number ... ");
+ 
+});
+});
+</script>
+
+ {% endblock %}

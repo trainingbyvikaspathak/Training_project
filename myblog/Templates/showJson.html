@@ -1,0 +1,10 @@
+<html>
+<body>
+{% for key,details in person_details.items %}
+<h2>{{key}} </h2>
+{% for name,value in details.items %}
+{{name}} : {{value}} <br/>
+{% endfor %}
+{% endfor %}
+</body>
+</html>
